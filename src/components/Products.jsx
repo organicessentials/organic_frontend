@@ -62,9 +62,9 @@ const Products = () => {
               >
                 <div className="pro_img">
                   <img src={doc.image} alt={doc.name} />
-                  <a href="#">
+                  <Link to={`/product/${doc.slug}`}>
                     <img src={arrow_view} alt="View" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="p_det">
                   <span className="p_titl">{doc.name}</span>
