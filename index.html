@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrganicEssentialsHub: Indian Organics At Your Doorstep!</title>
+    <meta name="description" content="We offer you the best organic and essential products at the OEH for a holistic living. Find the organic route to better health here." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const data = JSON.parse(localStorage.getItem('user'));
+      var currentURL = window.location.href;
+      var referralSource = document.referrer;
+      var currentURL = window.location.href;
+      let url = localStorage.getItem('url');
+      if (url === null) {
+      localStorage.setItem('url', currentURL);
+      } else if (currentURL !== url) {
+      console.log("URLs don't match");
+      } else {
+      console.log("URLs match");
+      }
+
+      fetch('https://backend.organicessentialshub.com/api/auth/add-custom-link', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({currentURL,referralSource,data}),
+      })
+      .then(response => {
+        
+          if (response.ok) {
+              console.log('URL visit recorded successfully.');
+          } else {
+              console.error('Failed to record URL visit.');
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+  </script>
+  </body>
+</html>
