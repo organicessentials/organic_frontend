@@ -4071,3 +4071,25 @@ button.re_order_com {
     height: 360px;
     background: #ccc;
 }
+.not_found {
+  text-align: center;
+  padding: 146px;
+}
+
+.not_found span {
+  font-size: 45px;
+  color: #5ea550;
+  font-weight: 700;
+  font-family: 'Poppins';
+}
+.not_found_marg {
+  margin: 41px 0 0 0;
+}
+.not_found_marg a {
+  background: #5ea550;
+    padding: 12px;
+    color: white;
+    font-size: 18px;
+    font-family: 'poppins';
+    border-radius: 12px;
+}

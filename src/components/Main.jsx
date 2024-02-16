@@ -53,6 +53,7 @@ import TrackOrder from "./TrackOrder";
 import Blogs from "./Blogs";
 import Thanku from "./Thanku";
 import OrderComplate from "./OrderComplate";
+import PageNotFound from "./PageNotFound";
 
 
 
@@ -98,6 +99,7 @@ const Main = () => {
           }
         />
         <Route path="/thank-you_/" element={<Thanku />} />
+        <Route path="*" element={<PageNotFound />}/>
         <Route path="/order-received" element={<OrderComplate />} />
         <Route path="/login" element={<Login />} />
         <Route path="/my-account/lost-password" element={<LostPassword />} />
