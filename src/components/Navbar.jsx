@@ -38,17 +38,31 @@ import heart from "../assets/heart.svg";
 import heair from "../assets/heair.svg";
 import digest from "../assets/digest.svg";
 import suge from "../assets/suge.svg";
+
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user: item } = useSelector((state) => state.user);
-  const { items: products } = useSelector((state) => state.products);
+  const [products, setProducts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   const user = decodeToken(item);
 
   const cart = useSelector((state) => state.cart);
   const [show, setShow] = useState(false);
+
+  const getData = async () => {
+    try {
+      const result = await axios.get(`${config}/api/auth/show/products`);
+      setProducts(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   useEffect(() => {
     dispatch(getTotals());
@@ -76,12 +90,11 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        
         <div class="arrow-text">
-        <div className="storeopenaa">
-          <img style={{ width: "20px" }} src={storeopen} alt="store" />
-          <span>STORE OPEN</span>
-        </div>
+          <div className="storeopenaa">
+            <img style={{ width: "20px" }} src={storeopen} alt="store" />
+            <span>STORE OPEN</span>
+          </div>
           <span class="arrow">&lt;</span>
           Finest Indian Organics At Your Doorstep! Free Shipping Over USD 35.
           <span class="arrow">&gt;</span>
@@ -247,11 +260,11 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link to="/product-category/Sugar-Metabolism">
-                      <img src={suge} />
+                        <img src={suge} />
                         <span>Sugar Metabolism</span>
                       </Link>
                     </li>
-                    
+
                     <li>
                       <Link to="/product-category/Teas">
                         <img src={tea} />
@@ -345,19 +358,15 @@ const Navbar = () => {
                       {searchInput !== "" && (
                         <div>
                           {products
-                            .filter(
-                              (doc) =>
-                                doc.name
-                                  ?.toLowerCase()
-                                  .indexOf(searchInput.toLowerCase()) !== -1
+                            .filter((product) =>
+                              product.name
+                                ?.toLowerCase()
+                                .includes(searchInput.toLowerCase())
                             )
                             .slice(0, 5)
                             .map((product) => (
-                              <div className="se_results">
-                                <Link
-                                  to={`/product/${product.slug}`}
-                                  key={product.id}
-                                >
+                              <div className="se_results" key={product.id}>
+                                <Link to={`/product/${product.slug}`}>
                                   {product.name}
                                 </Link>
                               </div>

@@ -46,8 +46,24 @@ const InnerHeader = () => {
   const user = decodeToken(item)
   const cart = useSelector((state)=>state.cart)
   const [show,setShow] = useState(false)
-  const { items: products } = useSelector((state) => state.products);
   const [searchInput, setSearchInput] = useState("");
+
+  const [products, setProducts] = useState([]);
+  
+
+  const getData = async () => {
+    try {
+      const result = await axios.get(`${config}/api/auth/show/products`);
+      setProducts(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   
   useEffect(() => {
     dispatch(getTotals());
