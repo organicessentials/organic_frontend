@@ -8,7 +8,7 @@ import KommunicateChat from "./KommunicateChat";
 const Footer = () => {
   return (
     <>
-    <KommunicateChat/>
+    {/* <KommunicateChat/> */}
       <div className="footer">
         <div className="container_foot">
           <div className="foot_left">
