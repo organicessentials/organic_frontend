@@ -5,6 +5,8 @@ import Rhodiola from "../assets/Nutrija-Rhodiola.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { productsFetch } from "../features/productsSlice";
+import axios from "axios";
+import config from "../config";
 
 const selectedSlugs = [
   "ashwagandha-ksm-66500mg",
@@ -85,27 +87,43 @@ const BestProducts = () => {
   const navigate = useNavigate();
     const dispatch = useDispatch();
     const currentPageRef = useRef(1);
+
+    const [products, setProducts] = useState([]);
+  
+
+  const getData = async () => {
+    try {
+      const result = await axios.get(`${config}/api/auth/show/products`);
+      setProducts(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
     
-    const { items: products, loading } = useSelector((state) => state.products);
+    // const { items: products, loading } = useSelector((state) => state.products);
 
-    useEffect(() => {
-        dispatch(productsFetch());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(productsFetch());
+    // }, [dispatch]);
 
-    const handleScroll = () => {
-        const scrollThreshold = document.documentElement.scrollHeight - window.innerHeight - 200;
-        if (window.scrollY > scrollThreshold && !loading) {
-            currentPageRef.current += 1;
-            dispatch(productsFetch(currentPageRef.current));
-        }
-    };
+    // const handleScroll = () => {
+    //     const scrollThreshold = document.documentElement.scrollHeight - window.innerHeight - 200;
+    //     if (window.scrollY > scrollThreshold && !loading) {
+    //         currentPageRef.current += 1;
+    //         dispatch(productsFetch(currentPageRef.current));
+    //     }
+    // };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [handleScroll]);
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, [handleScroll]);
 
     const formatter = new Intl.NumberFormat("en-US", {
         style: "currency",

@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import arrow_view from "../assets/arrow_view.svg";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { productsFetch } from "../features/productsSlice";
+import axios from "axios";
+import config from "../config";
 
 const Deal = () => {
 
@@ -84,27 +86,43 @@ const Deal = () => {
   const navigate = useNavigate();
     const dispatch = useDispatch();
     const currentPageRef = useRef(1);
-    
-    const { items: products, loading } = useSelector((state) => state.products);
 
-    useEffect(() => {
-        dispatch(productsFetch());
-    }, [dispatch]);
+    const [products, setProducts] = useState([]);
+  
 
-    const handleScroll = () => {
-        const scrollThreshold = document.documentElement.scrollHeight - window.innerHeight - 200;
-        if (window.scrollY > scrollThreshold && !loading) {
-            currentPageRef.current += 1;
-            dispatch(productsFetch(currentPageRef.current));
-        }
+    const getData = async () => {
+      try {
+        const result = await axios.get(`${config}/api/auth/show/products`);
+        setProducts(result.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
-
+  
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [handleScroll]);
+      getData();
+    }, []);
+    
+    // const { items: products, loading } = useSelector((state) => state.products);
+
+    // useEffect(() => {
+    //     dispatch(productsFetch());
+    // }, [dispatch]);
+
+    // const handleScroll = () => {
+    //     const scrollThreshold = document.documentElement.scrollHeight - window.innerHeight - 200;
+    //     if (window.scrollY > scrollThreshold && !loading) {
+    //         currentPageRef.current += 1;
+    //         dispatch(productsFetch(currentPageRef.current));
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, [handleScroll]);
 
     const formatter = new Intl.NumberFormat("en-US", {
         style: "currency",
