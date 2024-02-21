@@ -18,17 +18,16 @@ import paymentgetway from "../assets/paymentgetway.png";
 import Toast from "./Toast";
 import axios from "axios";
 import config from "../config";
-import {Helmet} from "react-helmet";
-import gifLoader from "../assets/Loader-1.gif"
+import { Helmet } from "react-helmet";
+import gifLoader from "../assets/Loader-1.gif";
 
 const ProductDetails = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const params = useParams()
+  const params = useParams();
   const [preLoader, setPreLoader] = useState(true);
   const [activeIndex, setActiveIndex] = useState(null);
-  const [product,setProduct] = useState("")
+  const [product, setProduct] = useState("");
   const [visibleTop, setVisibleTop] = useState(true);
   const [num, setNum] = useState(0);
   const cart = useSelector((state) => state.cart);
@@ -41,22 +40,29 @@ const ProductDetails = () => {
     });
   }, []);
 
-
-  const getData =async() => {
+  const getData = async () => {
     try {
-      const result = await axios.get(`${config}/api/auth/show/product/${params?.id}`)
+      const result = await axios.get(
+        `${config}/api/auth/show/product/${params?.id}`
+      );
       setProduct(result.data);
-      setPreLoader(false)
+      setPreLoader(false);
     } catch (error) {
-      console.log(error);
-    } 
-  }
+      if (error.response && error.response.status === 404) {
+        navigate('/404'); // Redirect to your custom 404 page
+      } else {
+        console.log(error);
+        // Handle other errors if needed
+      }
+    }
+  };
+  
 
   useEffect(() => {
-    getData()
-  }, [params?.id])
-  
- console.log(product);
+    getData();
+  }, [params?.id]);
+
+  console.log(product);
 
   const addProduct = () => {
     let newItem = {
@@ -66,7 +72,7 @@ const ProductDetails = () => {
       image: product.image,
     };
     dispatch(addToCart(newItem));
-    Toast({title:"Add Cart",type:"success"})
+    Toast({ title: "Add Cart", type: "success" });
   };
 
   const increment = () => {
@@ -94,8 +100,7 @@ const ProductDetails = () => {
     minimumFractionDigits: 2,
   });
 
-  const handelChange = (doc,index) => {
-    
+  const handelChange = (doc, index) => {
     setActiveIndex(index === activeIndex ? null : index);
     console.log(doc);
     setVisibleTop(true);
@@ -105,26 +110,31 @@ const ProductDetails = () => {
   if (preLoader) {
     return (
       <div className="loading_layout">
-      <img src={gifLoader} className="preloader" alt="logo" />
+        <img src={gifLoader} className="preloader" alt="logo" />
       </div>
     );
   }
-  
-
 
   return (
     <>
-         
-        <div>
+      <div>
         <Helmet>
-        <title>{product.seoTitle?product.seoTitle:product.name}</title>
-        <meta name="description" content={product.seoDescription} />
-    </Helmet>
-          <div className="bred_crum">
+          <title>{product.seoTitle ? product.seoTitle : product.name}</title>
+          <meta name="description" content={product.seoDescription} />
+        </Helmet>
+        <div className="bred_crum">
           <div className="container_sec">
-              <span className="span_bead"><Link to="/">Home</Link><span>/</span><Link to={`/product-category/${product?.category[0].name}`}>{product?.category[0].name}</Link><span>/</span>{product?.name}</span>
-            </div>
+            <span className="span_bead">
+              <Link to="/">Home</Link>
+              <span>/</span>
+              <Link to={`/product-category/${product?.category[0].name}`}>
+                {product?.category[0].name}
+              </Link>
+              <span>/</span>
+              {product?.name}
+            </span>
           </div>
+        </div>
         <section className="details_page">
           <div className="container_sec">
             <div className="row">
@@ -185,7 +195,9 @@ const ProductDetails = () => {
                   )}
                 </h4>
                 <div
-                  dangerouslySetInnerHTML={{ __html: product?.shortDescription }}
+                  dangerouslySetInnerHTML={{
+                    __html: product?.shortDescription,
+                  }}
                 ></div>
 
                 <div>
@@ -214,7 +226,8 @@ const ProductDetails = () => {
                     {visibleTop ? (
                       <div>
                         <div className="show" style={{ fontSize: "16px" }}>
-                          {product?.variants && product.variants[0]?.description ? (
+                          {product?.variants &&
+                          product.variants[0]?.description ? (
                             <div
                               dangerouslySetInnerHTML={{
                                 __html: num
@@ -292,7 +305,10 @@ const ProductDetails = () => {
                   <div className="tmr_reting2">
                     <div className="reting_widget">
                       <div className="logo_widg">
-                      <a href="https://techmorereview.com/companies/organicessentialshub/"> <img src={tmr} /></a>
+                        <a href="https://techmorereview.com/companies/organicessentialshub/">
+                          {" "}
+                          <img src={tmr} />
+                        </a>
                       </div>
                       <div className="reting_star">
                         <img src={star_tech} />
@@ -301,21 +317,31 @@ const ProductDetails = () => {
                         <img src={star_tech} />
                         <img src={star_half} />
                       </div>
-                      <a href="https://techmorereview.com/companies/organicessentialshub/"><span className="trust_score">Trustscore <b>4.5</b> | <b>510</b> Reviews</span></a>
+                      <a href="https://techmorereview.com/companies/organicessentialshub/">
+                        <span className="trust_score">
+                          Trustscore <b>4.5</b> | <b>510</b> Reviews
+                        </span>
+                      </a>
                     </div>
                     <div className="reting_widget">
-            <div className="logo_widg jd_logo_pro">
-            <a href="https://reviews.organicessentialshub.com"><img src={trust} /></a>
-            </div>
-            <div className="reting_star">
-              <img src={star_trust} />
-              <img src={star_trust} />
-              <img src={star_trust} />
-              <img src={star_trust} />
-              <img src={star_half_trust} />
-            </div>
-            <a href="https://reviews.organicessentialshub.com"><span className="trust_score">Trustscore <b>4.47</b> | <b>536</b> Reviews</span></a>
-          </div>
+                      <div className="logo_widg jd_logo_pro">
+                        <a href="https://reviews.organicessentialshub.com">
+                          <img src={trust} />
+                        </a>
+                      </div>
+                      <div className="reting_star">
+                        <img src={star_trust} />
+                        <img src={star_trust} />
+                        <img src={star_trust} />
+                        <img src={star_trust} />
+                        <img src={star_half_trust} />
+                      </div>
+                      <a href="https://reviews.organicessentialshub.com">
+                        <span className="trust_score">
+                          Trustscore <b>4.47</b> | <b>536</b> Reviews
+                        </span>
+                      </a>
+                    </div>
                     {/* <div className="reting_widget trust_wg">
                       <div className="logo_widg">
                       <a href="https://www.trustpilot.com/review/organicessentialshub.com"><img src={trust} /></a>
@@ -336,7 +362,7 @@ const ProductDetails = () => {
           </div>
           <Tab description={product?.description} id={product?._id} />
         </section>
-        </div>
+      </div>
     </>
   );
 };
