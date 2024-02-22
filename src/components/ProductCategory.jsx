@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Helmet} from "react-helmet";
 import config from '../config';
 import axios from 'axios';
+import SideBar from './SideBar';
 const ProductCategory = () => {
   const navigate = useNavigate();
   const { params } = useParams();
   const [products, setProducts] = useState([])
+  const [sortingOption, setSortingOption] = useState("");
 
   useEffect(() => {
     window.scrollTo({
@@ -48,17 +50,36 @@ const ProductCategory = () => {
     navigate(`/product/${doc.slug}`, { state: doc });
   };
 
+  // const handleSortChange = (event) => {
+  //   const selectedOption = event.target.value;
+  //   setSortingOption(selectedOption);
+  // };
+
   return (
     <>
      <Helmet>
         <title>{capitalizedParams} - Organic Essentials Hub</title>
     </Helmet>
+      <div style={{display:'flex'}}>
+      <SideBar/>
+      <div>
+      {/* <div>
+        <select name="" id="" onChange={handleSortChange} value={sortingOption}>
+          <option value="">Default Sort</option>
+          <option value="popularity">Sort By Popularity</option>
+          <option value="rating">Sort By Average Rating</option>
+          <option value="latest">Sort By Latest</option>
+          <option value="lowToHigh">Sort By Price : low to high</option>
+          <option value="highToLow">Sort By Price : high to low</option>
+        </select>
+      </div> */}
       <div className="bredcrum_org">
         <h1>{capitalizedParams}</h1>
       </div>
       <div className='container_sec'>
         <div className="products">
-          {products.map((doc) => (
+          {products
+          .map((doc) => (
               <Link to={`/product/${doc.slug}`} key={doc._id} onClick={() => nextPage(doc)} className="pro_details">
                 <div className="pro_img">
                   <img src={doc.image} alt={doc.name} />
@@ -84,6 +105,8 @@ const ProductCategory = () => {
               </Link>
             ))}
         </div>
+      </div>
+      </div>
       </div>
     </>
   );
