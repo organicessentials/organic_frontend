@@ -20,6 +20,7 @@ import axios from "axios";
 import config from "../config";
 import { Helmet } from "react-helmet";
 import gifLoader from "../assets/Loader-1.gif";
+import RelatedProducts from "./RelatedProducts";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -363,6 +364,9 @@ const ProductDetails = () => {
           <Tab description={product?.description} id={product?._id} />
         </section>
       </div>
+      <div>
+        <RelatedProducts category={product?.category[0].name}/>
+        </div>
     </>
   );
 };

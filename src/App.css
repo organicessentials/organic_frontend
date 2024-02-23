@@ -4093,3 +4093,11 @@ button.re_order_com {
     font-family: 'poppins';
     border-radius: 12px;
 }
+
+
+.related_prod {
+  text-align: center;
+  margin: 24px;
+  width: 100%;
+  float: left;
+}
