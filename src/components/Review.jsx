@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import star from "../assets/star1.svg";
+
 const Review = () => {
   const settings = {
     dots:false,

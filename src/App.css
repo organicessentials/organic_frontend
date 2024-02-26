@@ -4051,9 +4051,12 @@ button.re_order_com {
 .video_col {
   width: 100%;
 }
+.vid_contain {
+  padding: 0 38px 0px 34px;
+}
 .vid_contain h2 {
   font-family: "Elsie", Sans-serif;
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 100;
   color: #5ea550;
   margin: 16px 0px 16px 0px;
@@ -4100,4 +4103,9 @@ button.re_order_com {
   margin: 24px;
   width: 100%;
   float: left;
+}
+
+.ctmrw_item_inner_img {
+  display: flex;
+  justify-content: center;
 }

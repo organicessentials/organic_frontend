@@ -74,14 +74,10 @@ const Shop = () => {
               <div className="p_det">
                 <span className="p_titl">{doc.name}</span>
                 <span className="p_price">
-                  {doc?.variants && doc.variants[0] && (
-                    <h4>
-                      {formatter.format(doc.variants[0]?.price)} –
-                      {formatter.format(
-                        doc.variants[doc.variants.length - 1]?.price
-                      )}
+                <h4>
+                      {formatter.format(doc.firstVariantPrice)} –
+                      {formatter.format(doc.lastVariantPrice)}
                     </h4>
-                  )}
                 </span>
               </div>
             </Link>

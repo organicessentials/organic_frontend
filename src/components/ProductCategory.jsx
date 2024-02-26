@@ -12,6 +12,7 @@ const ProductCategory = () => {
   const { params } = useParams();
   const [products, setProducts] = useState([])
   const [sortingOption, setSortingOption] = useState("");
+  console.log(products);
 
   useEffect(() => {
     window.scrollTo({
@@ -60,8 +61,8 @@ const ProductCategory = () => {
      <Helmet>
         <title>{capitalizedParams} - Organic Essentials Hub</title>
     </Helmet>
-      <div style={{display:'flex'}}>
-      <SideBar/>
+      <div style={{display:'flex',justifyContent:"center"}}>
+      {/* <SideBar/> */}
       <div>
       {/* <div>
         <select name="" id="" onChange={handleSortChange} value={sortingOption}>
@@ -92,14 +93,10 @@ const ProductCategory = () => {
                     {doc.name}
                   </span>
                   <span className="p_price">
-                    {doc?.variants && doc.variants[0] && (
-                      <h4>
-                        {formatter.format(doc.variants[0]?.price)} –
-                        {formatter.format(
-                          doc.variants[doc.variants.length - 1]?.price
-                        )}
-                      </h4>
-                    )}
+                  <h4>
+                      {formatter.format(doc.firstVariantPrice)} –
+                      {formatter.format(doc.lastVariantPrice)}
+                    </h4>
                   </span>
                 </div>
               </Link>
