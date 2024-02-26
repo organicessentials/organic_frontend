@@ -4052,7 +4052,10 @@ button.re_order_com {
   width: 100%;
 }
 .vid_contain {
-  padding: 0 38px 0px 34px;
+  padding: 0;
+}
+.slick-slide {
+  padding: 21px !important;
 }
 .vid_contain h2 {
   font-family: "Elsie", Sans-serif;

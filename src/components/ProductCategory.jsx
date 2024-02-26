@@ -6,12 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Helmet} from "react-helmet";
 import config from '../config';
 import axios from 'axios';
+import gifLoader from "../assets/Loader-1.gif"
 import SideBar from './SideBar';
 const ProductCategory = () => {
   const navigate = useNavigate();
   const { params } = useParams();
   const [products, setProducts] = useState([])
   const [sortingOption, setSortingOption] = useState("");
+  const [loading,setLoading] = useState(true)
   console.log(products);
 
   useEffect(() => {
@@ -33,6 +35,7 @@ const ProductCategory = () => {
       try {
         const result = await axios.get(`${config}/api/auth/show/products/${capitalizedParams}`)
         setProducts(result.data)
+        setLoading(false)
       } catch (error) {
         
       }
@@ -55,6 +58,14 @@ const ProductCategory = () => {
   //   const selectedOption = event.target.value;
   //   setSortingOption(selectedOption);
   // };
+
+  if (loading) {
+    return (
+      <div className="loading_layout">
+      <img src={gifLoader} className="preloader" alt="logo" />
+      </div>
+    );
+  }
 
   return (
     <>

@@ -132,150 +132,150 @@ const Navbar = () => {
                   <Link>Shop Now</Link>
                   <ul class="dropdown-content shop_menu">
                     <li>
-                      <Link to="/product-category/Antioxidant">
+                      <a href="/product-category/Antioxidant">
                         <img src={ani} />
                         <span>Antioxidant</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Brain-Health">
+                      <a href="/product-category/Brain-Health">
                         <img src={brain} />
                         <span>Brain Health</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="product-category/Cardiac-Support">
+                      <a href="product-category/Cardiac-Support">
                         <img src={cardic} />
                         <span>Cardiac Support</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Cardiovascular-Support">
+                      <a href="/product-category/Cardiovascular-Support">
                         <img src={cardio} />
                         <span>Cardiovascular Support</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Cough">
+                      <a href="/product-category/Cough">
                         <img src={cough} />
                         <span>Cough & Cold</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Diabetes">
+                      <a href="/product-category/Diabetes">
                         <img src={dib} />
                         <span>Diabetes</span>
-                      </Link>
+                      </a>
                     </li>
 
                     <li>
-                      <Link to="/product-category/Dietary-Support">
+                      <a href="/product-category/Dietary-Support">
                         <img src={diet} />
                         <span>Dietary Support</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Digestive-Health">
+                      <a href="/product-category/Digestive-Health">
                         <img src={digest} />
                         <span>Digestive Health</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Hair-Care">
+                      <a href="/product-category/Hair-Care">
                         <img src={heair} />
                         <span>Hair Care</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Heart-Health">
+                      <a href="/product-category/Heart-Health">
                         <img src={heart} />
                         <span>Heart Health</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Immunity">
+                      <a href="/product-category/Immunity">
                         <img src={immu} />
                         <span>Immunity</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Joint-Health">
+                      <a href="/product-category/Joint-Health">
                         <img src={joint} />
                         <span>Joint Health</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Liver-Health">
+                      <a href="/product-category/Liver-Health">
                         <img src={liver} />
                         <span>Liver Health</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Mens-Health">
+                      <a href="/product-category/Mens-Health">
                         <img src={mens} />
                         <span>Men's Health</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Menopause-Support">
+                      <a href="/product-category/Menopause-Support">
                         <img src={meno} />
                         <span>Menopause Support</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Metabolic-Wellness">
+                      <a href="/product-category/Metabolic-Wellness">
                         <img src={meta} />
                         <span>Metabolic Wellness</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Oral-Health">
+                      <a href="/product-category/Oral-Health">
                         <img src={oral} />
                         <span>Oral Health</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Pain">
+                      <a href="/product-category/Pain">
                         <img src={pain} />
                         <span>Pain</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Penis-Enlargement">
+                      <a href="/product-category/Penis-Enlargement">
                         <img src={penis} />
                         <span>Penis Enlargement</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Skin-Care">
+                      <a href="/product-category/Skin-Care">
                         <img src={skin} />
                         <span>Skin & Acne Care</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Stress">
+                      <a href="/product-category/Stress">
                         <img src={stre} />
                         <span>Stress</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Sugar-Metabolism">
+                      <a href="/product-category/Sugar-Metabolism">
                         <img src={suge} />
                         <span>Sugar Metabolism</span>
-                      </Link>
+                      </a>
                     </li>
 
                     <li>
-                      <Link to="/product-category/Teas">
+                      <a href="/product-category/Teas">
                         <img src={tea} />
                         <span>Teas</span>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/product-category/Womens-Health">
+                      <a href="/product-category/Womens-Health">
                         <img src={women} />
                         <span>Womens Health</span>
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </li>
