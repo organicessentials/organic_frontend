@@ -63,7 +63,6 @@ const ProductDetails = () => {
     getData();
   }, [params?.id]);
 
-  console.log(product);
 
   const addProduct = () => {
     let newItem = {
@@ -71,6 +70,7 @@ const ProductDetails = () => {
       price: num.price ? num.price : product.variants[0].price,
       id: product._id,
       image: product.image,
+      category:product?.category[0].name
     };
     dispatch(addToCart(newItem));
     Toast({ title: "Add Cart", type: "success" });
@@ -90,6 +90,7 @@ const ProductDetails = () => {
       price: num.price ? num.price : product.variants[0].price,
       id: product._id,
       image: product.image,
+      category:product?.category[0].name
     };
     dispatch(addToCart(newItem));
     navigate("/cart");

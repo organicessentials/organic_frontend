@@ -17,6 +17,7 @@ import axios from 'axios';
 import config from '../config';
 import { applyCoupon, removeCoupon } from '../features/couponSlice';
 import {Helmet} from "react-helmet";
+import CartRelatedProducts from './CartRelatedProducts';
 
 const Cart = () => { 
 
@@ -27,6 +28,7 @@ const Cart = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const cart = useSelector((state) => state.cart)
+  console.log(cart);
   const [couponName, setCouponName] = useState("")
   const [message, setMessage] = useState("")
   const [timer, setTimer] = useState(207);
@@ -267,7 +269,11 @@ return (
                 {/* <div>
                 <button className="add_cart">Update Cart</button>
               </div> */}
+              <div>
+               <CartRelatedProducts category={cart.cartItems[0].category}/>
               </div>
+              </div>
+              
               <div className='view_cart_pnl'>
 
               <h3 className='cart_rttle'> Cart Totals</h3>
@@ -334,8 +340,7 @@ return (
             
           </div>
         </div>
-
-
+        
       </>
     ) : (
       <div className='cart_emp' style={{ marginBottom: "24px" }}>
