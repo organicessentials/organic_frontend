@@ -72,8 +72,8 @@ const ProductCategory = () => {
      <Helmet>
         <title>{capitalizedParams} - Organic Essentials Hub</title>
     </Helmet>
-      <div style={{display:'flex',justifyContent:"center"}}>
-      {/* <SideBar/> */}
+      <div>
+      
       <div>
       {/* <div>
         <select name="" id="" onChange={handleSortChange} value={sortingOption}>
@@ -89,6 +89,10 @@ const ProductCategory = () => {
         <h1>{capitalizedParams}</h1>
       </div>
       <div className='container_sec'>
+        <div className='cat_pro'>
+        <div className='sidebar_cats'>
+        { <SideBar/> }
+        </div>
         <div className="products">
           {products
           .map((doc) => (
@@ -112,6 +116,7 @@ const ProductCategory = () => {
                 </div>
               </Link>
             ))}
+        </div>
         </div>
       </div>
       </div>

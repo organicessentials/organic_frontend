@@ -30,7 +30,7 @@ const SideBar = () => {
   return (
     <>
       <div className="col-md-3 col-md-pull-9 sidebar-enabled sidebar sidebar-left">
-        <div
+        {/* <div
           id="etheme-search-3"
           className="sidebar-widget etheme_widget_search"
         >
@@ -62,7 +62,7 @@ const SideBar = () => {
             <input type="hidden" name="et_search" defaultValue="true" />
             <input type="hidden" name="post_type" defaultValue="product" />
           </form>
-        </div>
+        </div> */}
         {/* //sidebar-widget */}
         <div
           id="woocommerce_product_categories-4"
@@ -80,9 +80,7 @@ const SideBar = () => {
               {/* <span className="count">(15)</span> */}
             </li>
             ))}
-            <li className="et_widget-show-more">
-              <span>See more</span>
-            </li>
+            
           </ul>
         </div>
       </div>

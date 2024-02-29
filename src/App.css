@@ -2213,7 +2213,15 @@ button.add_cart-account {padding: 10px 18px !important;}
 }
 }
 @media screen and (min-width:300px) and (max-width:600px) {
-
+  .sidebar_cats {
+    display: none !important;
+}
+.cat_pro .pro_details {
+  width: 44% !important;
+}
+.pro_img a img {
+  display: none;
+}
   .video_section {
     width: 100%;
     display: flex;
@@ -4111,4 +4119,36 @@ button.re_order_com {
 .ctmrw_item_inner_img {
   display: flex;
   justify-content: center;
+}
+.cat_pro {
+  width: 100%;
+  float: left;
+  display: flex;
+  column-gap: 20px;
+}
+
+.sidebar_cats {
+  width: 25%;
+}
+h4.widget-title span {
+  margin-bottom: 20px;
+  color: #011413;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+div#woocommerce_product_categories-4 li {
+  list-style: none;
+  padding: 4px 0;
+}
+
+.cat_pro .pro_details {
+  width: 31%;
+  float: left;
+  cursor: pointer;
+}
+div#woocommerce_product_categories-4 {
+  width: 100%;
+  float: left;
 }
