@@ -72,7 +72,9 @@ const SideBar = () => {
             <span>Product categories</span>
           </h4>
           <ul className="product-categories with-accordion">
-            {category.map((doc)=>(
+            {category
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((doc)=>(
                 <li className="cat-item cat-item-28">
               <Link to={`/product-category/${doc.slug}`}>
                {doc.name}
