@@ -19,7 +19,7 @@ import Toast from "./Toast";
 import axios from "axios";
 import config from "../config";
 import { Helmet } from "react-helmet";
-import gifLoader from "../assets/Loader-1.gif";
+import gifLoader from "../assets/preloader.png";
 import RelatedProducts from "./RelatedProducts";
 
 const ProductDetails = () => {

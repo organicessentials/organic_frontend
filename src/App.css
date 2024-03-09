@@ -4157,3 +4157,23 @@ div#woocommerce_product_categories-4 {
   width: 100%;
   float: left;
 }
+
+.loading_layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this value based on your layout */
+}
+
+.preloader {
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

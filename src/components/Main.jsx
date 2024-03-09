@@ -45,7 +45,7 @@ import OrganicBlog from './OrganicBlog'
 import Blogs_de from './Blogs_de'
 import ViewOrder from "./dashboard/ViewOrder";
 import OrderPay from "./dashboard/OrderPay";
-import gifLoader from "../assets/Loader-1.gif"
+import gifLoader from "../assets/preloader.png"
 import { useDispatch, useSelector } from "react-redux";
 import { productsFetch } from "../features/productsSlice";
 import Password from "./Password";

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Helmet} from "react-helmet";
 import config from '../config';
 import axios from 'axios';
-import gifLoader from "../assets/Loader-1.gif"
+import gifLoader from "../assets/preloader.png"
 import SideBar from './SideBar';
 const ProductCategory = () => {
   const navigate = useNavigate();
