@@ -4,11 +4,12 @@ import leaf from "../assets/23-1.png";
 import payments from "../assets/payments.png";
 import { Link } from "react-router-dom";
 import KommunicateChat from "./KommunicateChat";
+import Botpenguin from "./Botpenguin";
 
 const Footer = () => {
   return (
     <>
-    {/* <KommunicateChat/> */}
+    { <KommunicateChat /> }
       <div className="footer">
         <div className="container_foot">
           <div className="foot_left">
@@ -72,6 +73,7 @@ const Footer = () => {
                   </div>
           </div>
           <div className="copytext">
+
           Copyright © 2024 Organic Essentials Hub. All Rights Reserved.
 
           </div>

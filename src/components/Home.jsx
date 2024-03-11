@@ -46,6 +46,7 @@ const Home = () => {
       <Products />
       <Rating />
       <Blogs />
+      
       <Newsletter /></>}
     </>
   );
