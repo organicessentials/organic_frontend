@@ -4,11 +4,12 @@ import leaf from "../assets/23-1.png";
 import payments from "../assets/payments.png";
 import { Link } from "react-router-dom";
 import KommunicateChat from "./KommunicateChat";
-import Botpenguin from "./Botpenguin";
 
 const Footer = () => {
   return (
     <>
+
+    
     { <KommunicateChat /> }
       <div className="footer">
         <div className="container_foot">
