@@ -46,7 +46,7 @@ const Popup = () => {
       >
         <Box sx={style}>
           <div className="pop_immh">
-            <img src={image} alt="Popup Image" />
+           <a href='./best-sellers'> <img src={image} alt="Popup Image" /></a>
             <button onClick={handleClose}> <img src={close} alt="Close" /></button>
           </div>
         </Box>
