@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      {popup===false?
+      {popup===true?
         <>
         <Popup/>
         <Banner />

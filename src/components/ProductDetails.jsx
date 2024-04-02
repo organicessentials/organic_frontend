@@ -340,7 +340,7 @@ const ProductDetails = () => {
                       </div>
                       <a href="https://reviews.organicessentialshub.com">
                         <span className="trust_score">
-                          Trustscore <b>4.47</b> | <b>536</b> Reviews
+                          Trustscore <b>4.47</b> | <b>582</b> Reviews
                         </span>
                       </a>
                     </div>

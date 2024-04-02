@@ -65,7 +65,7 @@ const Rating = () => {
               <img src={star_trust} />
               <img src={star_half_trust} />
             </div>
-            <a href="https://reviews.organicessentialshub.com"><span className="trust_score">Trustscore <b>4.47</b> | <b>536</b> Reviews</span></a>
+            <a href="https://reviews.organicessentialshub.com"><span className="trust_score">Trustscore <b>4.47</b> | <b>582</b> Reviews</span></a>
           </div>
       </div>
 

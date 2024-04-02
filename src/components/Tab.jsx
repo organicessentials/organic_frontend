@@ -110,18 +110,20 @@ const ReviewsTabContent = ({id}) => {
             )
             .map((doc) => (
               <div key={doc._id} className="review_user">
-                <div>
+                 <div className="user_details">
+                  
                   <img
                     src="https://secure.gravatar.com/avatar/0800f3cbe8235ae790fe10dfd48dd377?s=60&d=mm&r=g"
                     alt=""
                   />
-                </div>
-                <div>
-                  <span className="userName"> {doc.name} </span>
+                   <span className="userName"> {doc.name} </span>
                   <span className="userDate">
                     {moment(doc.createAt).format("l")}
                   </span>
-                  <br />
+                </div>
+                <div>
+                 
+                 
                   <Rating value={doc.review} cancel={false} />
                   <br />
                   <span className="userComment">{doc.comment}</span>

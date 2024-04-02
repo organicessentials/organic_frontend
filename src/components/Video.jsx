@@ -64,29 +64,6 @@ const Video = () => {
                 </div>
               </div>
               <div className="ctmrw_item">
-                <div className="ctmrw_item_inner">
-                  <div className="ctmrw_item_inner_img">
-                    <img
-                      style={{ height: "315px", width: "auto" }}
-                      src={Review_item1}
-                      alt=""
-                    />
-                  </div>
-                  <div className="vid_contain">
-                    <h2>Quality Organic Products</h2>
-                    <span>
-                      I've been a regular customer of OrganicEssentialsHub, and
-                      I'm consistently impressed with the quality of their
-                      organic products. The range is diverse, and the items are
-                      sourced with utmost care. The delivery is prompt, and the
-                      packaging reflects a commitment to sustainability. I
-                      highly recommend this hub for those seeking premium
-                      organic essentials
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="ctmrw_item">
                 <div className="vid_frmae">
                   <iframe
                     width="560"
@@ -110,6 +87,30 @@ const Video = () => {
                   </span>
                 </div>
               </div>
+              <div className="ctmrw_item">
+                <div className="ctmrw_item_inner">
+                  <div className="ctmrw_item_inner_img">
+                    <img
+                      style={{ height: "315px", width: "auto" }}
+                      src={Review_item1}
+                      alt=""
+                    />
+                  </div>
+                  <div className="vid_contain">
+                    <h2>Quality Organic Products</h2>
+                    <span>
+                      I've been a regular customer of OrganicEssentialsHub, and
+                      I'm consistently impressed with the quality of their
+                      organic products. The range is diverse, and the items are
+                      sourced with utmost care. The delivery is prompt, and the
+                      packaging reflects a commitment to sustainability. I
+                      highly recommend this hub for those seeking premium
+                      organic essentials
+                    </span>
+                  </div>
+                </div>
+              </div>
+             
               <div className="ctmrw_item">
                 <div className="ctmrw_item_inner">
                   <div className="ctmrw_item_inner_img">

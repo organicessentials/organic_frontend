@@ -100,7 +100,7 @@ const InnerHeader = () => {
         <span>STORE OPEN</span>
       </div>
         <span class="arrow">&lt;</span>
-        Finest Indian Organics At Your Doorstep! Free Shipping Over USD 35.
+        Unlock 5% off with code WEVALUEYOU till 8th April'24.
         <span class="arrow">&gt;</span>
       </div>
       <div className="storeopen inner_col"><span>support@organicessentialshub.com</span></div>
