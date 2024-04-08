@@ -124,6 +124,7 @@ const ProductDetails = () => {
           <title>{product.seoTitle ? product.seoTitle : product.name}</title>
           <meta name="description" content={product.seoDescription} />
         </Helmet>
+
         <div className="bred_crum">
           <div className="container_sec">
             <span className="span_bead">
