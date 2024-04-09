@@ -90,6 +90,7 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us - Organic Essentials Hub</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://organicessentialshub.com/contact-us/`} />
       </Helmet>
       <div className="bredcrum_org">
         <h1>Contact Us</h1>

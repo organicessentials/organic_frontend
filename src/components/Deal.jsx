@@ -139,6 +139,8 @@ const Deal = () => {
        <Helmet>
         <title>Deal - Organic Essentials Hub</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://organicessentialshub.com/deal/`} />
+
     </Helmet>
        <div className="bredcrum_dal">
     

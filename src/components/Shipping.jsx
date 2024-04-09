@@ -19,6 +19,8 @@ const Shipping = () => {
      <Helmet>
         <title>Shipping &amp; Payment - Organic Essentials Hub</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://organicessentialshub.com/shipping-payment/`} />
+
     </Helmet>
        <div className="bredcrum_org">
     <h1>Shipping & Payment</h1>

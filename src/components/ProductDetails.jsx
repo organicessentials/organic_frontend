@@ -120,10 +120,12 @@ const ProductDetails = () => {
   return (
     <>
       <div>
-        <Helmet>
-          <title>{product.seoTitle ? product.seoTitle : product.name}</title>
-          <meta name="description" content={product.seoDescription} />
-        </Helmet>
+      <Helmet>
+  <title>{product.seoTitle ? product.seoTitle : product.name}</title>
+  <meta name="description" content={product.seoDescription} />
+  {product.slug && <link rel="canonical" href={`https://organicessentialshub.com/product/${product.slug}`} />}
+
+</Helmet>
 
         <div className="bred_crum">
           <div className="container_sec">

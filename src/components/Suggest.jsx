@@ -67,6 +67,7 @@ const Suggest = () => {
         <Helmet>
         <title>Suggest A Product - Organic Essentials Hub</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://organicessentialshub.com/suggest-a-product/`} />
     </Helmet>
       <div>
         <div className="account_login">

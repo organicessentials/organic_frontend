@@ -17,6 +17,8 @@ const Privacy = () => {
       <Helmet>
         <title>Privacy & Policy - Organic Essentials Hub</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://organicessentialshub.com/privacy-policy/`} />
+
     </Helmet>
        <div className="bredcrum_org">
     <h1>Privacy & Policy</h1>

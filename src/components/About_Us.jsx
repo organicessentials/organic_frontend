@@ -21,6 +21,8 @@ const About_Us = () => {
       <Helmet>
         <title>About Us - Organic Essentials Hub</title>
         <meta name="description" content="At Organic Essentials Hub, we procure our products from highly approved industry-leading, certified manufacturers. Our Story Welcome to Organic Essentials Hub, a celebration of India's" />
+         <link rel="canonical" href={`https://organicessentialshub.com/about-us/`} />
+
     </Helmet>
        <div className="bredcrum_org">
     <h1>About Us</h1>

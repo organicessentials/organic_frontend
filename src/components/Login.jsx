@@ -108,6 +108,8 @@ const Login = () => {
         <Helmet>
         <title>Login/Register - Organic Essentials Hub</title>
         <meta name="description" content="" />
+        <link rel="canonical" href={`https://organicessentialshub.com/login/`} />
+
     </Helmet>
       <div className="account_login">
         <h1><FontAwesomeIcon style={{marginTop:"6px"}} icon={faUserTie} />My Account</h1>

@@ -11,6 +11,8 @@ import Popup from './Popup';
 import { setShowPopup } from '../features/popupSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Video from './Video';
+import {Helmet} from "react-helmet";
+
 
 const Home = () => {
 
@@ -28,6 +30,11 @@ const Home = () => {
 
   return (
     <>
+     <Helmet>
+        <title>OrganicEssentialsHub: Indian Organics At Your Doorstep!</title>
+        <meta name="description" content="We offer you the best organic and essential products at the OEH for a holistic living. Find the organic route to better health here." />
+        <link rel="canonical" href={`https://organicessentialshub.com/`} />
+      </Helmet>
       {popup===false?
         <>
        
