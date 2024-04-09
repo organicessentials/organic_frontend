@@ -30,7 +30,7 @@ const Home = () => {
     <>
       {popup===false?
         <>
-        <Popup/>
+       
         <Banner />
       <ViewAll />
       <Services />
