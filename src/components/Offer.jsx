@@ -10,7 +10,7 @@ const Offer = () => {
     <div className="offer_sec">
       <div className="container_sec">
         <div className="offer_1">
-        <h2 className="offer_head">Big Sale</h2>
+        <h2 className="offer_head">Free Shipping on orders above $35</h2>
         <div className="offer_text-">
         <span><img src={check} />Unlock 5% off with code <b>WEVALUEYOU!</b></span>
         <span><img src={check} />Choose from convenient payment options: PayPal, Credit/Debit cards, Sezzle, and E-check.</span>
